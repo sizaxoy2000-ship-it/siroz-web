@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>سيروز | Siroz - مبرمجة ويب احترافية</title>
+    <meta name="description" content="منصة سيروز (Siroz) لخدمات برمجة وتصميم مواقع الويب بروح برتقالية مبدعة.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #ff6600; 
+            --secondary-color: #ffffff; 
+            --text-dark: #2d3436;
+            --bg-light: #fffcf9; 
+            --accent-dark: #d35400; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--secondary-color);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(255, 102, 0, 0.1);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary-color); }
+
+        .hero {
+            min-height: 75vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--secondary-color);
+            padding: 2rem 5%;
+        }
+
+        .hero h1 { font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1rem; max-width: 600px; margin-bottom: 2rem; opacity: 0.9; }
+
+        .btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 2px solid var(--secondary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover { background: transparent; color: var(--secondary-color); transform: scale(1.05); }
+
+        .services { padding: 4rem 5%; text-align: center; }
+        .section-title { font-size: 1.8rem; margin-bottom: 3rem; color: var(--primary-color); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 102, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .service-card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+        .service-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; display: block; }
+
+        .qr-section {
+            background: var(--secondary-color);
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .btn-social {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .btn-whatsapp { background: #25D366; }
+        .btn-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+
+        .contact {
+            padding: 4rem 5%;
+            background: #fffcf9;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* تنسيق زر الإيميل المباشر الجديد */
+        .direct-email-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.05);
+            text-align: center;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .submit-btn:hover { background: var(--accent-dark); transform: translateY(-3px); }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 360px) {
+            header { padding: 0.8rem 3%; }
+            .logo { font-size: 1.2rem; }
+            nav a { font-size: 0.75rem; margin-right: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SI<span>ROZ</span></div>
+        <nav>
+            <a href="#home">سيروز</a>
+            <a href="#services">خدماتي</a>
+            <a href="#contact-me">تواصل</a>
+            <a href="#contact">البريد</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>سيروز.. إبداع  عالم الكود</h1>
+        <p>خريجة تقنية معلومات تجمع بين التصميم المذهل والبرمجة القوية لبناء مشروعك القادم.</p>
+        <a href="#contact" class="btn"><i class="fas fa-rocket"></i> اطلبي مشروعك الآن</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">خدمات سيروز</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-paint-brush"></i><h3>تصميم UI/UX</h3><p>واجهة حيوية تضمن تجربة مستخدم لا تُنسى.</p></div>
+            <div class="service-card"><i class="fas fa-code"></i><h3>تطوير الويب</h3><p>بناء مواقع سريعة ومتجاوبة باستخدام أحدث لغات البرمجة.</p></div>
+            <div class="service-card"><i class="fab fa-google"></i><h3>SEO وبصمة جوجل</h3><p>نجعل اسم مشروعك يلمع في الصفحة الأولى من محركات البحث.</p></div>
+        </div>
+    </section>
+
+    <section class="qr-section" id="contact-me">
+        <h2 class="section-title" style="margin-bottom: 1rem;">بصمة سيروز الرقمية</h2>
+        <p>تواصلِ معي مباشرة لمناقشة مشروعكِ القادم</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/9647517332216" target="_blank" class="btn-social btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> واتساب سيروز
+            </a>
+            <a href="https://instagram.com/develop.4" target="_blank" class="btn-social btn-insta">
+                <i class="fab fa-instagram"></i> انستغرام @develop.4
+            </a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div style="flex: 1; min-width: 280px; text-align: right;">
+            <h2 class="section-title">دعنا نبدأ النجاح</h2>
+            <p>سأكون سعيدة باستقبال طلباتكم عبر البريد:</p>
+            <h3 style="color: var(--primary-color); margin-top: 10px; font-size: 1.1rem;">sizaxoy2000@gmail.com</h3>
+        </div>
+
+        <div class="direct-email-card">
+            <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+            <h3 style="margin-bottom: 1rem; color: var(--text-dark);">راسليني الآن</h3>
+            <p style="margin-bottom: 2rem; font-size: 0.9rem;">اضغطي على الزر أدناه لإرسال تفاصيل مشروعكِ مباشرة إلى بريدي الإلكتروني.</p>
+            
+            <a href="mailto:sizaxoy2000@gmail.com?subject=طلب مشروع جديد - سيروز" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> إرسال عبر البريد
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 سيروز - Siroz | جميع الحقوق محفوظة</p>
+        <p style="font-size: 0.7rem; margin-top: 5px; opacity: 0.8;">ما قُدّر لكِ لن يخطئكِ</p>
+    </footer>
+
+</body>
+</html>
